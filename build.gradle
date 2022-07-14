@@ -23,6 +23,8 @@ dependencies {
 	// Replace the above line with the block below if you want to use Mojang mappings as your primary mappings, falling back on QM for parameters and Javadocs
 	/*
 	mappings loom.layered {
+		addLayer quiltMappings.mappings("org.quiltmc:quilt-mappings:${libs.versions.quilt.mappings.get()}:v2")
+		officialMojangMappings() // Uncomment if you want to use Mojang mappings as your primary mappings, falling back on QM for parameters and Javadocs
 		mappings "org.quiltmc:quilt-mappings:${libs.versions.quilt.mappings.get()}:intermediary-v2"
 		officialMojangMappings()
 	}
@@ -65,7 +67,7 @@ java {
 
 // If you plan to use a different file for the license, don't forget to change the file name here!
 jar {
-	from('LICENSE') {
+	from('LICENSE.md') {
 		rename { "${it}_${archivesBaseName}" }
 	}
 }
